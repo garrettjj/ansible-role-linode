@@ -1,2 +1,17 @@
 ---
 # tasks file for ansible-role-linodev4
+
+# toDo:
+  # Verify linode python library installed
+  # 
+
+- name: "Create a new Linode"
+  linode_v4:
+    state: present
+    label: "{{ linode_label }}"
+    type: "{{ linode_type }}"
+    region: "{{ linode_region }}"
+    image: "{{ linode_image }}"
+    root_pass: "{{ linode_root_pass }}"
+    authorized_keys: "{{ linode_ssh_keys }}"
+  register: my_linode

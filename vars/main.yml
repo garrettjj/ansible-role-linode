@@ -1,2 +1,23 @@
 ---
 # vars file for ansible-role-linodev4
+#
+#### Required variables ####
+
+linode_label: "hostname"
+
+# Size & type of Linode
+#linode_type: "g6-nanode-1"
+
+# Region
+linode_region: "us-east"
+
+# Image
+linode_image: "linode/fedora29"
+
+# Root password
+# python3 -c "from passlib.hash import sha512_crypt; print(sha512_crypt.hash('MyGreatPassword'))"
+linode_root_pass: "MyGreatPassword"
+
+# Authorized SSH Keys - Use lookup for local key or explicitly print the key into the variable:
+#authorized_keys: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+#authorized_keys: "ssh-rsa ..."
